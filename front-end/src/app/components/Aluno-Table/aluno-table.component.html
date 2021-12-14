@@ -1,0 +1,37 @@
+<div class="card-container">
+  <div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="!isLoading && error == null" class="container" >
+    <h3>Aluno</h3>
+    <mat-form-field appearance="outline" floatLabel="always" >
+      <mat-label>ID Aluno</mat-label>
+      <input matInput type="text" placeholder="Id Aluno" disabled value={{aluno?.id}}>
+    </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Data/Hora Cadastro</mat-label>
+      <input matInput type="text" placeholder="Hora do Cadastro" disabled value={{aluno?.dataHoraCadastro}}>
+    </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Nome</mat-label>
+      <input matInput type="text" placeholder="Nome" value={{aluno?.nome}} (change)="onChangeForm('nome', $event)">
+    </mat-form-field>
+    <mat-form-field appearance="outline" floatLabel="always">
+      <mat-label>Matrícula</mat-label>
+      <input matInput type="text" placeholder="Matrícula" value={{aluno?.matricula}} (change)="onChangeForm('matricula', $event)">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Data nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" [formControl]="serializedDate" (dateChange)="onChangeFormDate($event)">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker [startAt]="date"></mat-datepicker>
+    </mat-form-field>
+    <div class="button-container">
+      <button mat-raised-button color="secondary" class="button" (click)="onClickCancel()">Cancelar</button>
+      <button mat-raised-button color="primary" class="button" (click)="onClickUpdate()">Confirmar</button>
+    </div>
+  </div>
+  <div *ngIf="!isLoading && error != null">
+    Erros: {{error}}
+  </div>
+</div>

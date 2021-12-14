@@ -1,0 +1,16 @@
+<div class="card-container">
+  <div *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+  </div>
+  <div *ngIf="!isLoading && error == null">
+    <mat-card class="card">
+      <h2 class="title">Alunos</h2>
+      <h4>Total de Alunos registrados:</h4>
+      <h3>{{totalAlunos}}</h3>
+      <a mat-raised-button color="secondary" href="Listar-Aluno">Listar Alunos</a>
+    </mat-card>
+  </div>
+  <div *ngIf="!isLoading && error != null">
+    Erros: {{error}}
+  </div>
+</div>

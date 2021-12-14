@@ -1,0 +1,33 @@
+.example-spacer {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+
+.navbar{
+  background-color: dimgray;
+  color: white;
+  padding: 10px;
+
+}
+.navbar-brand{
+  padding: 10px;
+  text-decoration-line: none;
+}
+.home{
+  margin-left: 10px;
+  color: white;
+  text-align: center;
+}
+
+footer {
+  color: #FFF;
+  background-color: dimgray;
+  height: 38px;
+  text-align: -webkit-center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+
+}
+

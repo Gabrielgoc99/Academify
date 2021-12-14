@@ -1,0 +1,17 @@
+<div class="modal">
+  <h1 class="subDiv">
+    Delete Student
+  </h1>
+
+  <div class="subDiv">
+    Você deseja deletar o registro desse aluno: {{data.nome}}
+    <div *ngIf="error != null" class="error">
+      Erros: {{error}}
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button color="gray" class="button" (click)="dismissModal()">Cancelar</button>
+    <button mat-raised-button color="warn" class="button" (click)="onClickDelete(data)">Confirmar</button>
+  </div>
+</div>
