@@ -4,22 +4,22 @@
   </div>
   <div *ngIf="!isLoading && error == null" class="container">
     <h3>Aluno</h3>
-    <mat-form-field appearance="fill" floatLabel="always">
+    <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>Nome</mat-label>
-      <input matInput type="text" class="form-control" [(ngModel)]="aluno.nome">
+      <input matInput required="required" type="text" class="form-control" [(ngModel)]="aluno.nome">
     </mat-form-field>
-    <mat-form-field appearance="fill" floatLabel="always">
+    <mat-form-field appearance="outline" floatLabel="always">
       <mat-label>Matrícula</mat-label>
-      <input matInput type="text" class="form-control" [(ngModel)]="aluno.matricula">
+      <input matInput required="required" type="text" class="form-control" [(ngModel)]="aluno.matricula">
     </mat-form-field>
-    <mat-form-field appearance="fill">
+    <mat-form-field appearance="outline">
       <mat-label>Data nascimento</mat-label>
-      <input matInput [matDatepicker]="picker" [formControl]="serializedDate" (dateChange)="onChangeFormDate($event)">
+      <input matInput required="required" [matDatepicker]="picker" [formControl]="serializedDate" (dateChange)="onChangeFormDate($event)">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker [startAt]="date"></mat-datepicker>
     </mat-form-field>
     <div class="button-container">
-      <button mat-raised-button color="gray" class="button" (click)="onClickCancel()">Cancelar</button>
+      <button mat-raised-button color="warn" class="button" (click)="onClickCancel()">Cancelar</button>
       <button mat-raised-button color="primary" class="button" (click)="onClickCreate()">Confirmar</button>
     </div>
   </div>

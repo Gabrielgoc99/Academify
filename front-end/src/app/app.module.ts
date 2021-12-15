@@ -24,6 +24,7 @@ import { PrincipalComponent } from './components/Principal/principal.component';
 import { NavbarComponent } from './components/Navbar/navbar.component';
 import { FooterComponent } from './components/Footer/footer.component';
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 @NgModule({
   declarations: [
@@ -36,26 +37,27 @@ import {MatToolbarModule} from "@angular/material/toolbar";
     NavbarComponent,
     FooterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatIconModule,
-    MatTableModule,
-    MatProgressSpinnerModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatSnackBarModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    MatCardModule,
-    MatToolbarModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatIconModule,
+        MatTableModule,
+        MatProgressSpinnerModule,
+        MatButtonModule,
+        MatDialogModule,
+        MatSnackBarModule,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatNativeDateModule,
+        ReactiveFormsModule,
+        MatCardModule,
+        MatToolbarModule,
+        MatPaginatorModule
+    ],
   providers: [],
   bootstrap: [AppComponent, PrincipalComponent, NavbarComponent]
 })

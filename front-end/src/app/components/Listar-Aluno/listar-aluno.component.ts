@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Aluno } from 'src/app/models/aluno.model';
-import {MatDialog} from '@angular/material/dialog';
-import {AlunoService} from '../../services/aluno.service'
+import { MatDialog } from '@angular/material/dialog';
+import { AlunoService } from '../../services/aluno.service'
 import { DeletarAlunoComponent } from '../Deletar-Aluno/deletar-aluno.component';
+import { MatPaginator } from "@angular/material/paginator";
 
 @Component({
   selector: 'app-listar-aluno',
@@ -10,7 +11,10 @@ import { DeletarAlunoComponent } from '../Deletar-Aluno/deletar-aluno.component'
   styleUrls: ['./listar-aluno.component.css']
 })
 export class ListarAlunoComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'dataHoraCadastro', 'matricula', 'nascimento', 'nome', 'actions'];
+
+  @ViewChild(MatPaginator) protected paginator!: MatPaginator;
+
+  displayedColumns: string[] = ['id', 'matricula', 'nome', 'nascimento', 'dataHoraCadastro', 'actions'];
 
   dataSource: Aluno[] = [];
   error: any = null;
@@ -44,6 +48,10 @@ export class ListarAlunoComponent implements OnInit {
       this.getAlunos();
     });
   }
+
+
+
+
 
   ngOnInit(): void {
   }

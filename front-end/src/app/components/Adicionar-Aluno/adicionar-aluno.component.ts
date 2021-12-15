@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { Aluno } from 'src/app/models/aluno.model';
 import { AlunoService } from 'src/app/services/aluno.service';
-import {FormControl} from '@angular/forms';
+import { FormControl } from '@angular/forms';
 import { Location } from '@angular/common';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
@@ -71,7 +71,7 @@ export class AdicionarAlunoComponent implements OnInit {
       if (this.aluno && event.value) {
         this.aluno = {
           ...this.aluno,
-          nascimento: event.value.toLocaleDateString("en-US")
+          nascimento: event.value.toLocaleDateString("pt-BR")
         }
       }
     }
